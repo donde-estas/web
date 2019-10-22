@@ -1,0 +1,10 @@
+.landing{
+  border-radius: 5px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+}

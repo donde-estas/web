@@ -1,0 +1,42 @@
+{
+  "name": "dondeestas",
+  "version": "0.0.1",
+  "description": "An application for handling your receipts digitally.",
+  "main": "dondeestas/wsgi.py",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "pipenv run python manage.py test",
+    "build": "webpack --config webpack.config.js",
+    "build-dev": "webpack --config webpack.config.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Donde-Estas/web.git"
+  },
+  "keywords": [
+    "recipts",
+    "django",
+    "js",
+    "python"
+  ],
+  "author": "Nicolas Quiroz and Ariel Martinez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Donde-Estas/web/issues"
+  },
+  "homepage": "https://github.com/Donde-Estas/web#readme",
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "webpack-bundle-tracker": "^0.4.3"
+  },
+  "dependencies": {
+    "image-webpack-loader": "^6.0.0",
+    "path": "^0.12.7",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
+  }
+}
