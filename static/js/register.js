@@ -3,14 +3,6 @@ $(document).ready(() => {
   // const container = $('div#register');
   const form = $('#register');
 
-  $.ajaxSetup({
-    headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-      'Access-Control-Allow-Origin': '*',
-    },
-  });
-
   form.submit((event) => {
     event.preventDefault();
 
@@ -23,10 +15,6 @@ $(document).ready(() => {
       console.log('error');
       console.log(data);
     }
-
-    $.post('http://donde-estas.herokuapp.com/missing', form.serialize(), (data) => {
-      console.log(data);
-    });
 
     $.ajax({
       type: 'POST',
