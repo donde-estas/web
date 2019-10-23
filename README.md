@@ -22,3 +22,31 @@ Where **branch-type** indicates what is the purpose of the branch. The possible 
 | release           | For freezing version these is a final version of the code prior to a release.                                                                  |
 | hotfix            | Fixing a critical part of the code or application.                                                                                             |
 | docs              | Documenting code or adding documenting files.                                                                                                  |
+
+## Installation
+
+```bash
+npm install --save-dev
+```
+
+```bash
+pipenv install --dev
+```
+
+```bash
+pipenv run python manage.py makemigrations && pipenv run python manage.py migrate
+```
+
+## Usage
+
+On one terminal run:
+
+```bash
+npm run build-dev
+```
+
+On another terminal run:
+
+```bash
+pipenv run python manage.py runserver
+```
