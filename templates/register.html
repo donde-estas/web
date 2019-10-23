@@ -1,44 +1,52 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div id="register-wrapper">
-  <form class="abstract" id="register">
-    <div class="field">
-      <div class="control">
-        <label class="label" for="first_name">Nombres del desaparecido:</label>
-        <input class="input is-primary" type="text" placeholder="Nombres" name="first_name">
-      </div>
-    </div>
-
-    <br>
-    <div class="field">
-      <div class="control">
-        <label class="label" for="last_name">Apellidos del desaparecido:</label>
-        <input class="input is-primary" type="text" placeholder="Apellidos" name="last_name">
-      </div>
-    </div>
-
-    <br>
-    <div class="field">
-      <div class="control">
-        <label class="label" for="missing_number">Teléfono del desaparecido:</label>
-        <input class="input is-primary" type="tel" placeholder="Teléfono" name="missing_number">
-      </div>
-    </div>
-
-    <br>
-    <div class="field">
-      <div class="control">
-        <label class="label" for="contact_number">Tu teléfono:</label>
-        <input class="input is-primary" type="tel" placeholder="Teléfono" name="contact_number">
-      </div>
-    </div>
-
-    <br>
-    <div class="control">
-      <input type="submit" class="button is-primary" value="Registrar">
-    </div>
-  </form>
+<div class="notification is-danger" id="registration-error" style="display: none">
+  <button class="delete"></button>
+  Ha ocurrido un error. Inténtelo nuevamente.
 </div>
-{% endblock content %}
+<div class="notification is-info" id="registration-success" style="display: none">
+  <button class="delete"></button>
+  El desaparecido se ha regisrado con éxito.
+</div>
 
+<form class="abstract" id="registration-form" method="post" action="{% url 'register' %}">
+  {% csrf_token %}
+
+  <div class="field">
+    <div class="control">
+      <label class="label" for="{{ form.first_name.id_for_label }}">Nombres del desaparecido:</label>
+      {{ form.first_name }}
+    </div>
+  </div>
+
+  <br>
+  <div class="field">
+    <div class="control">
+      <label class="label" for="{{ form.last_name.id_for_label }}">Apellidos del desaparecido:</label>
+      {{ form.last_name }}
+    </div>
+  </div>
+
+  <br>
+  <div class="field">
+    <div class="control">
+      <label class="label" for="{{ form.missing_mail.id_for_label }}">Email del desaparecido:</label>
+      {{ form.missing_mail }}
+    </div>
+  </div>
+
+  <br>
+  <div class="field">
+    <div class="control">
+      <label class="label" for="{{ form.contact_mail.id_for_label }}">Tu email:</label>
+      {{ form.contact_mail }}
+    </div>
+  </div>
+
+  <br>
+  <div class="control">
+    <button type="submit" id="registration-button" class="button is-primary">Registrar</button>
+  </div>
+</form>
+{% endblock content %}
