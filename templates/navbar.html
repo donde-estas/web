@@ -4,38 +4,22 @@
 
     <!-- logo or branding image on left side -->
     <div class="navbar-brand">
-      <a class="navbar-item" href="/">
+      <a class="navbar-item" href="{% url 'landing' %}">
         <strong>¿Dónde Estás?</strong>
       </a>
-      <div class="navbar-burger"  data-target="navbar-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
     </div>
 
     <!-- children of navbar-menu must be navbar-start and/or navbar-end -->
     <div class="navbar-menu" id="navbar-menu">
       <!-- navbar items | left side -->
       <div class="navbar-start">
-        <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">Docs</a>
-            <div class="navbar-dropdown">
-              <a class="navbar-item" href="#">Overview</a>
-              <a class="navbar-item" href="#">Elements</a>
-              <a class="navbar-item" href="#">Components</a>
-              <hr class="navbar-divider">
-              <div class="navbar-item"> Version 0.1.0</div>
-            </div>
-          </div>
       </div>
 
       <!-- navbar items | right side -->
       <div class="navbar-end">
-        <a class="navbar-item is-active" href="/"> Home</a>
-        <a class="navbar-item" href="#">About</a>
-        <a class="navbar-item" href="#">Projects</a>
-        <a class="navbar-item" href="#">Contact</a>
+        <a class="navbar-item is-active" href="{% url 'landing' %}"> Home</a>
+        <a class="navbar-item" href="{% url 'missing' %}">Buscar a alguien</a>
+        <a class="navbar-item" href="{% url 'register' %}">Registrar a alguien</a>
       </div>
 
     </div>
