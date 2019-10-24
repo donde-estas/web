@@ -5,9 +5,9 @@
 <div class="box">
   <h1 class="title">{{ name }} {{ last_name }} ({{ found|yesno:"Encontrad@,Desaparecid@" }})</h1>
   <div class="content">
-    <p> {{ name }} fue reportad@ desaparecid@ en <b>{{ created_date }}</b>
+    <p> {{ name }} fue reportad@ desaparecid@ a las <b class="time-placeholder">{{ created_date }}</b>
       {% if found %}
-        , y encontrad@ en <b id="time">{{ found_date }}</b>
+        , y encontrad@ a las <b class="time-placeholder">{{ found_date }}</b>
       </p>
       {% else %}
         .<br> En caso de saber su paradero y tener la llave correspondiente,
