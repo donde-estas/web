@@ -10,7 +10,6 @@ flake8 = "~=3.7"
 [packages]
 django = "~=2.2"
 django-webpack-loader = "~=0.6"
-django-static-jquery = "==2.1.4"
 
 [requires]
 python_version = "3.7"

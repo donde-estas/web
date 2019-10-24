@@ -1,4 +1,4 @@
-.landing {
+.landing{
   border-radius: 5px;
 }
 
@@ -7,8 +7,4 @@
   flex-wrap: wrap;
   justify-content: flex-end;
   align-items: center;
-}
-
-.abstract {
-  padding: 50px 400px;
 }
