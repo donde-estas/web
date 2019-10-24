@@ -3,18 +3,18 @@
 {% block content %}
 
 <div class="box">
-  <h1 class="title">{{ name }} {{ last_name }} ({{ found|yesno:"Encontrado,Desaparecido" }})</h1>
+  <h1 class="title">{{ name }} {{ last_name }} ({{ found|yesno:"Encontrad@,Desaparecid@" }})</h1>
   <div class="content">
-    <p> {{ name }} fue reportado desaparecido en <b>{{ created_date }}</b>
+    <p> {{ name }} fue reportad@ desaparecid@ en <b>{{ created_date }}</b>
       {% if found %}
-        , y encontrado en <b id="time">{{ found_date }}</b>
+        , y encontrad@ en <b id="time">{{ found_date }}</b>
       </p>
       {% else %}
         .<br> En caso de saber su paradero y tener la llave correspondiente,
-        por favor hacer click en el siguiente botó para registrarlo correctamente:
+        por favor hacer click en el siguiente botón para registrarlo correctamente:
       </p>
       <div class="buttons has-text-centered">
-        <button class="button found is-success">Encontrado</button>
+        <button class="button found is-success">Encontrad@</button>
       </div>
       {% endif %}
   </div>
