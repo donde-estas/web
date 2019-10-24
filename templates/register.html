@@ -7,7 +7,7 @@
 </div>
 <div class="notification is-info" id="registration-success" style="display: none">
   <button class="delete"></button>
-  El desaparecido se ha regisrado con éxito.
+  Persona desaparecida registrada con éxito.
 </div>
 
 <form class="abstract" id="registration-form" method="post" action="{% url 'register' %}">
@@ -15,7 +15,7 @@
 
   <div class="field">
     <div class="control">
-      <label class="label" for="{{ form.first_name.id_for_label }}">Nombres del desaparecido:</label>
+      <label class="label" for="{{ form.first_name.id_for_label }}">Nombres de persona desaparecida:</label>
       {{ form.first_name }}
     </div>
   </div>
@@ -23,7 +23,7 @@
   <br>
   <div class="field">
     <div class="control">
-      <label class="label" for="{{ form.last_name.id_for_label }}">Apellidos del desaparecido:</label>
+      <label class="label" for="{{ form.last_name.id_for_label }}">Apellidos de persona desaparecida:</label>
       {{ form.last_name }}
     </div>
   </div>
@@ -31,7 +31,7 @@
   <br>
   <div class="field">
     <div class="control">
-      <label class="label" for="{{ form.missing_mail.id_for_label }}">Email del desaparecido:</label>
+      <label class="label" for="{{ form.missing_mail.id_for_label }}">Email de persona desaparecida:</label>
       {{ form.missing_mail }}
     </div>
   </div>
