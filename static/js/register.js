@@ -22,7 +22,6 @@ $(document).ready(() => {
           registrationSuccess.hide();
           registrationForm.show();
         }
-        registrationButton.removeClass('is-loading');
       },
       error: () => {
         registrationError.show();
@@ -30,6 +29,8 @@ $(document).ready(() => {
         registrationForm.show();
       },
     });
+
+    registrationButton.removeClass('is-loading');
   });
 
   (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
