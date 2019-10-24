@@ -12,7 +12,6 @@ def get_landing_page(request):
 
 
 def get_people(request):
-    print("HEHE")
     people = requests.get(f"{settings.BASE_API_URL}/missing").json()
     payload = people["payload"] if people["success"] else []
     padding = [None] * (len(payload) % CARDS_PER_LINE)
