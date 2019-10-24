@@ -15,7 +15,10 @@ def get_people(request):
     people = requests.get(f"{settings.BASE_API_URL}/missing").json()
     payload = people["payload"] if people["success"] else []
     padding = [None] * (len(payload) % CARDS_PER_LINE)
-    ctx = {"people": payload + padding, "cards_per_line": CARDS_PER_LINE}
+    ctx = {
+        "people": payload + padding,
+        "cards_per_line": CARDS_PER_LINE,
+    }
     return HttpResponse(render(request, "people.html", ctx))
 
 
