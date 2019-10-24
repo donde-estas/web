@@ -2,9 +2,9 @@ import requests
 from urllib.parse import parse_qsl
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
-from .forms import RegisterForm
+from .forms import RegisterForm, GetKeyForm
 
-BASE_URL = "http://donde-estas.herokuapp.com"
+BASE_URL = "http://donde-estas-api.herokuapp.com"
 
 
 def get_landing_page(request):
@@ -26,3 +26,13 @@ def process_registration_view(request):
         if response.ok and response.json()["success"]:
             return JsonResponse({"success": True})
     return JsonResponse({"success": False})
+
+def show_person(request, id):
+    response = requests.get(f"{BASE_URL}/person/{id}")
+    if response.status_code == 200:
+        ctx = response.json()["payload"]
+        return HttpResponse(render(request, "show-person.html", context=ctx))
+    else:
+        return HttpResponse(render(request, "index.html"))
+
+
