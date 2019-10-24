@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-# import django_heroku
+import django_heroku
 from pathlib import Path
 
 
@@ -129,4 +129,4 @@ WEBPACK_LOADER = {
 # Heroku
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
