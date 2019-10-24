@@ -1,10 +1,9 @@
 import requests
-from urllib.parse import parse_qsl
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from .forms import RegisterForm
+from django.conf import settings
 
-BASE_URL = "http://donde-estas.herokuapp.com"
 CARDS_PER_LINE = 3
 
 
@@ -14,7 +13,7 @@ def get_landing_page(request):
 
 def get_people(request):
     print("HEHE")
-    people = requests.get(f"{BASE_URL}/missing").json()
+    people = requests.get(f"{settings.BASE_API_URL}/missing").json()
     payload = people["payload"] if people["success"] else []
     padding = [None] * (len(payload) % CARDS_PER_LINE)
     ctx = {
@@ -30,7 +29,7 @@ def process_registration_view(request):
         return HttpResponse(render(request, "register.html", ctx))
     if RegisterForm(request.POST).is_valid():
         query_params = request.body.decode()
-        response = requests.post(f"{BASE_URL}/person?{query_params}")
+        response = requests.post(f"{settings.BASE_API_URL}/person?{query_params}")
         print(response, response.json())  # for debugging
         if response.ok and response.json()["success"]:
             return JsonResponse({"success": True})
