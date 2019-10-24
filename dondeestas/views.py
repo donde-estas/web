@@ -2,7 +2,7 @@ import requests
 from urllib.parse import parse_qsl
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
-from .forms import RegisterForm, GetKeyForm
+from .forms import RegisterForm
 
 BASE_URL = "http://donde-estas-api.herokuapp.com"
 
