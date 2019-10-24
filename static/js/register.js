@@ -1,41 +1,23 @@
+/* eslint-disable no-undef */
 $(document).ready(() => {
-  const registrationError = $('#registration-error');
-  const registrationSuccess = $('#registration-success');
-  const registrationForm = $('#registration-form');
-  const registrationButton = $('#registration-button');
+  var form = $('#register');
 
-  registrationForm.submit((event) => {
+  form.submit((event) => {
     event.preventDefault();
-    registrationButton.addClass('is-loading');
 
     $.ajax({
       type: 'POST',
-      url: registrationForm.attr('action'),
-      data: registrationForm.serialize(),
-      success: (data) => {
-        if (data.success) {
-          registrationError.hide();
-          registrationSuccess.show();
-          registrationForm.hide();
-        } else {
-          registrationError.show();
-          registrationSuccess.hide();
-          registrationForm.show();
-        }
-        registrationButton.removeClass('is-loading');
+      url: `http://donde-estas.herokuapp.com/person?${form.serialize()}`,
+      // data: jQuery.param(form),
+      success: function (data) {
+        console.log("Success");
+        console.log(JSON.parse(JSON.stringify(data)));
       },
-      error: () => {
-        registrationError.show();
-        registrationSuccess.hide();
-        registrationForm.show();
-      },
+      error: function(data) {
+        console.log(JSON.parse(JSON.stringify(data)));
+      }
     });
+    return false;
   });
 
-  (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
-    const notification = $delete.parentNode;
-    $delete.addEventListener('click', () => {
-      notification.parentNode.removeChild(notification);
-    });
-  });
 });
