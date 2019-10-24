@@ -16,7 +16,7 @@
   {% block style %}{% endblock style %}
 
   <script type="text/javascript" src="{% static 'static_jquery/js/jquery.js' %}" />
-  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 
 <body>
@@ -28,6 +28,9 @@
       {% endblock content %}
     </div>
   </div>
+
+  {% block infinit_content %}
+  {% endblock infinit_content %}
 
   {% render_bundle 'main' 'js' %}
   {% block script %}
