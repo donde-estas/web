@@ -13,6 +13,7 @@ django-webpack-loader = "~=0.6"
 django-static-jquery = "==2.1.4"
 requests = "~=2.22"
 django-heroku = "~=0.3"
+gunicorn = "~=19.9"
 
 [requires]
 python_version = "3.7"
