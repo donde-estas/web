@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="notification is-danger" id="key-error" style="display: none">
+  <button class="delete"></button>
+  Ha ocurrido un error. Inténtelo nuevamente.
+</div>
+<div class="notification is-info" id="key-success" style="display: none">
+  <button class="delete"></button>
+  Persona registrada como encontrada correctamente.
+  <br>
+  Redirigiendo a perfil de persona en <b id="time-left">5</b>
+</div>
+
+<form class="abstract" id="key-form" method="post" action="{% url 'person.find' pid %}">
+  {% csrf_token %}
+
+  <div class="field">
+    <div class="control">
+      <label class="label" for="{{ form.key.id_for_label }}">Ingrese la key correspondiente:</label>
+      {{ form.key }}
+    </div>
+  </div>
+
+  <br>
+  <div class="control">
+    <button type="submit" id="key-button" class="button is-primary">Registrar</button>
+  </div>
+</form>
+
+
+<!-- <form class="abstract" method="post" action="{% url 'person.find' pid %}">
+  {% csrf_token %}
+
+  <div class="field">
+    <div class="control">
+      <label class="label" for="{{ form.key.id_for_label }}">Ingrese la key correspondiente:</label>
+      {{ form.key }}
+    </div>
+  </div>
+
+  <br>
+  <div class="control">
+    <button type="submit" class="button is-primary">Registrar Encontrado</button>
+  </div>
+</form> -->
+{% endblock content %}

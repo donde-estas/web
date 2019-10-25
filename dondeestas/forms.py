@@ -11,3 +11,10 @@ class RegisterForm(forms.Form):
         super(RegisterForm, self).__init__(*args, **kwargs)
         for key, _ in self.fields.items():
             self.fields[key].widget.attrs.update({"class": "input is-primary"})
+
+class FindPersonForm(forms.Form):
+    key = forms.CharField(max_length=50, required=True)
+    def __init__(self, *args, **kwargs):
+        super(FindPersonForm, self).__init__(*args, **kwargs)
+        for key, _ in self.fields.items():
+            self.fields[key].widget.attrs.update({"class": "input is-primary"})

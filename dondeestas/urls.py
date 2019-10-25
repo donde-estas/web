@@ -17,11 +17,17 @@ from django.urls import path
 from .views import (get_landing_page,
                     get_missing_list,
                     process_registration_view,
-                    show_person)
+                    show_person,
+                    find_form_person,
+                    find_person,
+                    find_person_with_key)
 
 urlpatterns = [
     path("", get_landing_page, name="landing"),
     path("missing", get_missing_list, name="missing"),
     path("register", process_registration_view, name="register"),
-    path("person/<int:id>", show_person, name="person.show"),
+    path("person/<int:pid>", show_person, name="person.show"),
+    path("person/<int:pid>/getkey", find_form_person, name="person.findform"),
+    path("person/<int:pid>/find", find_person, name="person.find"),
+    path("person/<int:pid>/find/<str:key>", find_person_with_key, name="person.find.with.key"),
 ]
