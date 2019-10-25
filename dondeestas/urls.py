@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.urls import path
 from .views import (get_landing_page,
-                    get_missing_list,
+                    get_people,
                     process_registration_view,
                     show_person,
                     find_form_person,
@@ -24,7 +24,7 @@ from .views import (get_landing_page,
 
 urlpatterns = [
     path("", get_landing_page, name="landing"),
-    path("missing", get_missing_list, name="missing"),
+    path("people", get_people, name="people"),
     path("register", process_registration_view, name="register"),
     path("person/<int:pid>", show_person, name="person.show"),
     path("person/<int:pid>/getkey", find_form_person, name="person.findform"),

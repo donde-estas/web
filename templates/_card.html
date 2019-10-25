@@ -1,0 +1,12 @@
+<div class="card">
+{% if not_empty %}
+  <div class="card-content">
+    <div class="media-content">
+      <p class="title is-4">Nombre: {{ first_name|add:" "|add:last_name }}</p>
+      <p class="subtitle is-6">Visto por última vez en <a href="{{ place }}">acá</a> el 21 de octubre a las {{ time }}</p>
+      <p>Encontrado: <i class="fa fa-check"></i></p>
+    </div>
+
+  </div>
+{% endif %}
+</div>
