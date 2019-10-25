@@ -6,7 +6,7 @@
   {% endif %}
     <div class="column">
     {% if person %}
-      {% include '_card.html' with not_empty=True first_name=person.name last_name=person.last_name %}
+      {% include '_card.html' with not_empty=True first_name=person.name last_name=person.last_name id=person.id time=person.created_date%}
     {% else %}
       {% include '_card.html' with not_empty=False %}
     {% endif %}

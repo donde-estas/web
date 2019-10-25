@@ -1,12 +1,12 @@
 <div class="card">
 {% if not_empty %}
-  <div class="card-content">
+  <!-- EL href tiene el link para cuando se haga click -->
+  <div class="card-content" href="person/{{ id }}">
     <div class="media-content">
       <p class="title is-4">Nombre: {{ first_name|add:" "|add:last_name }}</p>
-      <p class="subtitle is-6">Visto por última vez en <a href="{{ place }}">acá</a> el 21 de octubre a las {{ time }}</p>
+      <p class="subtitle is-6">Visto por última vez <a href="{{ place }}">acá</a> a las <span class="time-placeholder">{{ time }}</span></p>
       <p>Encontrado: <i class="fa fa-check"></i></p>
     </div>
-
   </div>
 {% endif %}
 </div>
