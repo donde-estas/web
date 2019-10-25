@@ -17,7 +17,7 @@
 
   <div class="field">
     <div class="control">
-      <label class="label" for="{{ form.key.id_for_label }}">Ingrese la key correspondiente:</label>
+      <label class="label" for="{{ form.key.id_for_label }}">Ingrese la key correspondiente enviada al su mail:</label>
       {{ form.key }}
     </div>
   </div>
@@ -28,20 +28,4 @@
   </div>
 </form>
 
-
-<!-- <form class="abstract" method="post" action="{% url 'person.find' pid %}">
-  {% csrf_token %}
-
-  <div class="field">
-    <div class="control">
-      <label class="label" for="{{ form.key.id_for_label }}">Ingrese la key correspondiente:</label>
-      {{ form.key }}
-    </div>
-  </div>
-
-  <br>
-  <div class="control">
-    <button type="submit" class="button is-primary">Registrar Encontrado</button>
-  </div>
-</form> -->
 {% endblock content %}

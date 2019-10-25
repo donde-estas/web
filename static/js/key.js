@@ -54,13 +54,4 @@ $(document).ready(() => {
   if (auto.length) {
     keyForm.submit();
   }
-
-  // Esto es innecesario porque ya se hace en register, quizás se podría modularizar
-
-  // (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
-  //   const notification = $delete.parentNode;
-  //   $delete.addEventListener('click', () => {
-  //     notification.parentNode.removeChild(notification);
-  //   });
-  // });
 });
