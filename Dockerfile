@@ -26,7 +26,9 @@ RUN apk update \
     postgresql-dev \
     postgresql-client \
     libpq \
-    tzdata
+    tzdata \
+    nodejs \
+    npm
 
 WORKDIR /app
 ADD requirements.txt /app
