@@ -27,8 +27,6 @@ RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 ADD ./ /app
 
-COPY dondeestas/local_settings.py /app/dondeestas/local_settings.py
-
 # Copy static files generated in the static stage
 # to the app container
 COPY --from=static /app/static/webpack_bundles /app/static/webpack_bundles
