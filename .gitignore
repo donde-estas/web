@@ -113,3 +113,6 @@ node_modules
 # Webpack builds
 */webpack_bundles/
 webpack-stats.json
+
+# Compiled staticfiles
+staticfiles
