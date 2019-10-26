@@ -11,6 +11,13 @@ RUN npm run build
 # Python app package stage (build)
 FROM python:3.8.0-alpine as final
 
+# set environment variables
+ARG PORT
+ENV PORT $PORT
+
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
 RUN apk update \
   && apk add \
     bash \
@@ -37,4 +44,4 @@ RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
 EXPOSE 8000
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD gunicorn dondeestas.wsgi --bind 0.0.0.0:$PORT --log-file -
