@@ -1,0 +1,13 @@
+version: '3'
+services:
+  web:
+    command: bash -c "gunicorn dondeestas.wsgi --daemon --bind 0.0.0.0:8000 --log-file - && npm run build-dev"
+    build:
+      context: .
+      args:
+        PORT: 8000
+    volumes:
+      - .:/app
+    ports:
+      - "3000:8000"
+    env_file: .env
